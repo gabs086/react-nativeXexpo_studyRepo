@@ -19,15 +19,13 @@ export default function App(props) {
       {/* Scrollviewing if items is longer and need to scrolldown */}
       <ScrollView>
       {
-        people.map(person => {
-          return (
+        people.map(person =>  (
             <View key={person.key}>
                 <Text style={styles.item}>
                    {person.person}
                 </Text>
               </View>
-          )
-        })
+          ))
       }
       </ScrollView>
     </View>
