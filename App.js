@@ -47,10 +47,13 @@ const App = () => {
     <SafeAreaView style={styles.container}>
 
       {/*
+      
       data prop: array of datas
       renderItem props: what component will the flatlist render
       keyExtractor: key id in the array of data
-      extraData: for rerendering the component if the state indicated in the prop changes 
+      extraData: for rerendering the component if the state indicated in the 
+      prop changes 
+      
        */}
 
       <FlatList
