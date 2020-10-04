@@ -7,7 +7,15 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
       },
-      buttonContainer: {
-        marginTop: 20,
+      header: {
+        backgroundColor: 'pink',
+        padding: 20,
+      },
+      body: {
+        backgroundColor: 'yellow',
+        padding: 20,
+      },
+      boldText: {
+        fontWeight: 'bold',
       }
   });

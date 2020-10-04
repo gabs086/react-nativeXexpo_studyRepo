@@ -1,26 +1,19 @@
-import React, { useState } from 'react';
-import { Text, View, Button } from 'react-native';
+import React from 'react';
+import { Text, View } from 'react-native';
 import { styles } from './styles/style';
 
 export default function App(props) {
-  const [name, setName] = useState('gab');
-  const [person, setPerson] = useState({ name: 'mario', age: 40 });
-
-  const clickHandler = () => {
-    setName('angge');
-    setPerson({ name: 'gavee', age: 45 });
-  };
-
   return (
     <View style={styles.container}>
-      <Text>My name is {name}</Text>
-
-      <Text>His name is {person.name} and his age is {person.age}</Text>
-
-      <View style={styles.buttonContainer}>
-        <Button title='update state' onPress={clickHandler} />  
+      <View style={styles.header}>
+        <Text style={styles.boldText}>Hello, World!</Text>
       </View>
-
+      <View style={styles.body}>
+        <Text>Lorem ipsum <Text style={styles.boldText}>dolor</Text> sit amet.</Text>
+        <Text>Lorem ipsum dolor sit amet.</Text>
+        <Text>Lorem ipsum dolor sit amet.</Text>
+      </View>
+      
     </View>
   );
 }
