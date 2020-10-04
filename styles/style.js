@@ -7,15 +7,11 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
       },
-      header: {
-        backgroundColor: 'pink',
-        padding: 20,
-      },
-      body: {
-        backgroundColor: 'yellow',
-        padding: 20,
-      },
-      boldText: {
-        fontWeight: 'bold',
+      input: {
+        borderWidth: 1,
+        borderColor: '#777',
+        padding: 8,
+        margin: 10,
+        width: 200,
       }
   });
