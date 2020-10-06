@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Text, View, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { styles } from './styles/style';
 import Header from './components/Header';
+import TodoItem from './components/TodoItem';
 
 const App = () => {
 
@@ -11,10 +12,13 @@ const App = () => {
     { text: 'play on the switch', key: '3' }
   ]);
 
-  const renderItem = ({ item }) => (
-    <Text>{item.text}</Text>
-  );
-  
+  const pressHandler = key => {
+    //Delete a previous state that the key is not equal to the presState key
+    setTodos(prevState => {
+      return prevState.filter(todo => todo.key !== key)
+    });
+  }
+ 
 
   return (
     <View style={styles.container}>
@@ -26,7 +30,10 @@ const App = () => {
           <View style={styles.list}>
               <FlatList
                 data={todos}
-                renderItem={renderItem}
+                //Render the TodoItemComponent with the props of the item
+                renderItem={props => (
+                  <TodoItem item={props.item} pressHandler={pressHandler}/>
+                )}
               />
           </View>
 
