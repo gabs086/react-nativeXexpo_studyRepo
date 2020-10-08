@@ -3,6 +3,7 @@ import { View, FlatList } from 'react-native';
 import { styles } from './styles/style';
 import Header from './components/Header';
 import TodoItem from './components/TodoItem';
+import AddTodo from './components/AddTodo';
 
 const App = () => {
 
@@ -18,6 +19,19 @@ const App = () => {
       return prevState.filter(todo => todo.key !== key)
     });
   }
+
+  const submitHandler = text => {
+    setTodos(prevState => {
+      return [
+        // saves another data in the array state 
+
+        { text: text, key: Math.random().toString()},
+
+        ...prevState,
+      ]
+    })
+
+  }
  
 
   return (
@@ -25,6 +39,9 @@ const App = () => {
         <Header />
         
         <View style={styles.content}>
+
+          {/* Form to add new todos  */}
+          <AddTodo submitHandler={submitHandler} />
 
           {/* Todo component  */}
           <View style={styles.list}>
