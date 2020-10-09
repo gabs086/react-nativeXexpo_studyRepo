@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, Alert } from 'react-native';
 import { styles } from './styles/style';
 import Header from './components/Header';
 import TodoItem from './components/TodoItem';
@@ -21,15 +21,26 @@ const App = () => {
   }
 
   const submitHandler = text => {
-    setTodos(prevState => {
-      return [
-        // saves another data in the array state 
-
-        { text: text, key: Math.random().toString()},
-
-        ...prevState,
-      ]
-    })
+    if(text.length > 3) {
+      setTodos(prevState => {
+        return [
+          // saves another data in the array state 
+  
+          { text: text, key: Math.random().toString()},
+  
+          ...prevState,
+        ]
+      });
+    }
+    else {
+      // Alert component takes the 1st parameter as the title and the message of the alert 
+      // 2nd parameter is the button title and its callback function (onPress, etc.) 
+      Alert.alert('ERROR', 'Your todos must be 3 characters long', [
+        {text: 'Understood', onPress: () => console.log('alert closed') }
+        // Cancelled is the option that you can click outside the alert 
+      ], { cancelable: true });
+    }
+    
 
   }
  
