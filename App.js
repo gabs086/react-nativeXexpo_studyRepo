@@ -10,6 +10,8 @@ import { styles } from "./styles/style";
 import Header from "./components/Header";
 import TodoItem from "./components/TodoItem";
 import AddTodo from "./components/AddTodo";
+import Sandbox from "./components/Sandbox";
+
 
 const App = () => {
   const [todos, setTodos] = useState([
@@ -52,6 +54,7 @@ const App = () => {
   };
 
   return (
+    // <Sandbox />
     // TouchableWithoutFeedback enables you to click in anypart of the screen to 
     // dismiss or do something. Ex: dismissig a keyboard  
     <TouchableWithoutFeedback onPress={ _ => {
