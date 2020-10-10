@@ -9,5 +9,9 @@ export const styles = StyleSheet.create({
         borderStyle: "dashed",
         borderRadius: 1,
         borderRadius: 10,
+        flexDirection: 'row'
+    },
+    itemText: {
+        marginLeft: 10,
     }
 })
