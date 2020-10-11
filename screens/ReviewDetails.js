@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { styles } from '../styles/reviewDetails';
+import { styles } from '../styles/globalStyles';
 
 export default function ReviewDetails() {
   return (

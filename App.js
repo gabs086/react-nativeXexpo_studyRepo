@@ -10,7 +10,7 @@ let customFont = {
 };
 
 //function to load asynchronously the font
-const getFonts = (_) => Font.loadAsync(customFont);
+const getFonts = () => Font.loadAsync(customFont);
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
