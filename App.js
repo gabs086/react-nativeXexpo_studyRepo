@@ -1,8 +1,16 @@
 import React, { useState } from "react";
+//pages 
 import Home from "./screens/Home";
 //To Load exoo-fonts
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
+
+//React Navigation
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+//Creating a stack in the app.js
+const Stack = createStackNavigator();
 
 let customFont = {
   "nunito-regular": require("./assets/fonts/Nunito-Regular.ttf"),
@@ -16,7 +24,18 @@ export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   if (fontsLoaded) {
-    return <Home />;
+    return (
+      //STack of the screens/ (Like react-router-dom)
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen 
+          name="Home" 
+          component={Home}
+          options={{ title: 'My home' }}
+           />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
   } else {
     return (
       <AppLoading

@@ -5,7 +5,7 @@ import { styles } from '../styles/globalStyles';
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Text style={styles.titleText}>Home Screen</Text>
+      <Text style={styles.titleText}>Home Screen </Text>
     </View>
   );
 }
