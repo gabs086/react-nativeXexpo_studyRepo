@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 //pages 
 import Home from "./screens/Home";
+import ReviewDetails from "./screens/ReviewDetails";
+
 //To Load exoo-fonts
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
@@ -28,10 +30,17 @@ export default function App() {
       //STack of the screens/ (Like react-router-dom)
       <NavigationContainer>
         <Stack.Navigator>
+
           <Stack.Screen 
           name="Home" 
           component={Home}
           options={{ title: 'My home' }}
+           />
+           
+           <Stack.Screen 
+          name="ReviewDetails" 
+          component={ReviewDetails}
+          options={{ title: 'My Reviews' }}
            />
         </Stack.Navigator>
       </NavigationContainer>
