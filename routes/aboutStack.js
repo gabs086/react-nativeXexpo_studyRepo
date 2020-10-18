@@ -1,11 +1,10 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from '../screens/Home';
-import ReviewDetails from '../screens/ReviewDetails';
+import About from '../screens/About';
 
 const Stack = createStackNavigator();
-// Home and Review Details Stack 
-export default function HomeStack () {
+//  About Page Stack 
+export default function AboutStack () {
     return (
 <Stack.Navigator
     screenOptions={{
@@ -16,20 +15,12 @@ export default function HomeStack () {
     }}
   >
     <Stack.Screen 
-    name="Home" 
-    component={Home}
+    name="About" 
+    component={About}
     options={{ 
-      title: 'Game Zone',
+      title: 'About Game Zone',
      
   }}
-     />
-    <Stack.Screen 
-    name="ReviewDetails" 
-    component={ReviewDetails}
-    options={{ 
-      title: 'Game Review',
-
-    }}
      />
   </Stack.Navigator> 
     )
