@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//pages 
+// Stack pages 
 import HomeStack from './routes/homeStack';
 import AboutStack from './routes/aboutStack';
 
@@ -35,7 +35,6 @@ export default function App() {
     return (
       //STack of the screens/ (Like react-router-dom)
       <NavigationContainer>
-
          {/* Drawer Stack */}
          <Drawer.Navigator>
            {/* Created a component for returning the stack screen of Home and Review Details Stack */}
@@ -46,9 +45,6 @@ export default function App() {
               }}
             />
          </Drawer.Navigator>
-
-        
-
       </NavigationContainer>
     );
   } else {
