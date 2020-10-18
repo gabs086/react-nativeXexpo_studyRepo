@@ -3,7 +3,6 @@ import { View, Text, Button } from 'react-native';
 import { styles } from '../styles/globalStyles';
 
 export default function ReviewDetails(props) {
-  console.log(props);
   return (
     <View style={styles.container}>
       {/* Use a props.route.params.title to get a specific data in the parameter in the main screen  */}

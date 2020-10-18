@@ -29,18 +29,36 @@ export default function App() {
     return (
       //STack of the screens/ (Like react-router-dom)
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: '#eee',
+              // height: 60
+            },
+            headerTintColor: '#444',
+          }}
+        >
 
           <Stack.Screen 
           name="Home" 
           component={Home}
-          options={{ title: 'My home' }}
+          options={{ 
+            title: 'Game Zone',
+            // headerStyle: {
+            //   backgroundColor: '#eee'
+            // }
+        }}
            />
            
            <Stack.Screen 
           name="ReviewDetails" 
           component={ReviewDetails}
-          options={{ title: 'My Reviews' }}
+          options={{ 
+            title: 'Game Review',
+            // headerStyle: {
+            //   backgroundColor: '#eee'
+            // }
+          }}
            />
         </Stack.Navigator>
       </NavigationContainer>
