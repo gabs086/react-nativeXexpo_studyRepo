@@ -3,6 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home';
 import ReviewDetails from '../screens/ReviewDetails';
 
+//other components
+import Header from '../layouts/Header';
+
 const Stack = createStackNavigator();
 // Home and Review Details Stack 
 export default function HomeStack () {
@@ -18,10 +21,13 @@ export default function HomeStack () {
     <Stack.Screen 
     name="Home" 
     component={Home}
-    options={{ 
-      title: 'Game Zone',
-     
-  }}
+    // To register the header component to be part of the navigation
+    options = {({ navigation }) => ({
+      headerTitle: props => <Header title="Game Zone" navigation={navigation} />,
+    })}
+    //  options={{
+    //           headerTitle: props => <Header />
+    //      }}
      />
     <Stack.Screen 
     name="ReviewDetails" 
