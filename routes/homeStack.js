@@ -23,7 +23,7 @@ export default function HomeStack () {
     component={Home}
     // To register the header component to be part of the navigation
     options = {({ navigation }) => ({
-      headerTitle: props => <Header title="Game Zone" navigation={navigation} />,
+      headerTitle: _ => <Header title="Game Zone" navigation={navigation} />,
     })}
     //  options={{
     //           headerTitle: props => <Header />

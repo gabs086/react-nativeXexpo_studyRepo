@@ -23,7 +23,7 @@ export default function AboutStack () {
     component={About}
     // To register the header component to be part of the navigation
     options = {({ navigation }) => ({
-      headerTitle: props => <Header title="About Game Zone" navigation={navigation} />,
+      headerTitle: _ => <Header title="About Game Zone" navigation={navigation} />,
     })}
   //   options={{ 
   //     headerTitle: props => <Header /> 
