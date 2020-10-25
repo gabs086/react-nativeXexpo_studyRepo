@@ -2,9 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
-export default function Header({navigation, title}) {
+export default function Header(props) {
     const openMenu = _ => {
-        navigation.openDrawer();
+        props.navigation.openDrawer();
     }
 
     return (
@@ -12,7 +12,7 @@ export default function Header({navigation, title}) {
             <MaterialIcons name="menu" size={28} onPress={openMenu} style={styles.icon} />
             <View>
                     <Text style={styles.headerText}>
-                    {title}
+                    {props.title}
                     </Text>
                 </View>
         </View>

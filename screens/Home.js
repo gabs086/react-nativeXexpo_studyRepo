@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, } from 'react-native';
 import { styles } from '../styles/globalStyles';
+//Import the card component
+import Card from '../layouts/Card';
 
 export default function Home(props) {
 
@@ -13,10 +15,12 @@ export default function Home(props) {
   // Better way to render components. My Style 
   const renderItem = ({ item }) => {
     return (
-      // When navigating and passing data, the 2nd paramete must be an object 
-        <TouchableOpacity onPress={_ => props.navigation.navigate('ReviewDetails', item)}>
-            <Text style={styles.titleText}>{item.title}</Text>
-        </TouchableOpacity>
+
+            <TouchableOpacity onPress={_ => props.navigation.navigate('ReviewDetails', item)}>
+                <Card>
+                   <Text style={styles.titleText}>{item.title}</Text>
+                </Card>
+            </TouchableOpacity>
     );
   }
 
