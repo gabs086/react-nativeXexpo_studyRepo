@@ -25,9 +25,7 @@ export default function AboutStack () {
     options = {({ navigation }) => ({
       headerTitle: _ => <Header title="About Game Zone" navigation={navigation} />,
     })}
-  //   options={{ 
-  //     headerTitle: props => <Header /> 
-  // }}
+ 
      />
   </Stack.Navigator> 
     )

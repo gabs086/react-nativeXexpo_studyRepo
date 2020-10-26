@@ -25,9 +25,6 @@ export default function HomeStack () {
     options = {({ navigation }) => ({
       headerTitle: _ => <Header title="Game Zone" navigation={navigation} />,
     })}
-    //  options={{
-    //           headerTitle: props => <Header />
-    //      }}
      />
     <Stack.Screen 
     name="ReviewDetails" 
