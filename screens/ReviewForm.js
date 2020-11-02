@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Button, TextInput, View, } from 'react-native';
+import { StyleSheet, Button, TextInput, View, Text } from 'react-native';
 import { styles } from '../styles/globalStyles.js';
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -8,11 +8,11 @@ import * as yup from 'yup';
 const reviewValidationSchema = yup.object({
     // Check the title if its a string and has a length four and above and its required
     title: yup.string()
-      .required()
+      .required("Title is needed for the review of the game")
       .min(4),
     // Check the body if its a string and has a length four and above and its required
     body: yup.string()
-      .required()
+      .required("Body is needed in the review")
       .min(8),
     // Check the if the rating is a number that is less than 6 and greater than 0
     rating: yup.string()
@@ -46,7 +46,9 @@ export default function ReviewForm(props) {
               onChangeText={props.handleChange('title')}
               value={props.values.title}
             />
-
+            {/* only if the left value is a valid string, will the right value be displayed */}
+            <Text style={styles.errorText}>{props.touched.title && props.errors.title}</Text>
+          
             <TextInput
               style={styles.input}
               multiline
@@ -54,6 +56,7 @@ export default function ReviewForm(props) {
               onChangeText={props.handleChange('body')}
               value={props.values.body}
             />
+            <Text style={styles.errorText}>{props.touched.body && props.errors.body}</Text>
 
             <TextInput 
               style={styles.input}
@@ -61,8 +64,9 @@ export default function ReviewForm(props) {
               onChangeText={props.handleChange('rating')}
               value={props.values.rating}
               keyboardType='numeric'
-            />
-            
+            />  
+            <Text style={styles.errorText}>{props.touched.rating && props.errors.rating}</Text>
+
             <Button color='maroon' title="Submit" onPress={props.handleSubmit} /> 
           </View>
         )}
