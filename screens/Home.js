@@ -4,6 +4,7 @@ import { styles } from "../styles/globalStyles";
 //Import the card component
 import Card from "../layouts/Card";
 import { MaterialIcons } from "@expo/vector-icons";
+import ReviewForm from "./ReviewForm";
 
 export default function Home(props) {
   //Modal State
@@ -54,7 +55,7 @@ export default function Home(props) {
             style={styles2.modalClose}
             onPress={() => setModal(false)}
           />
-          <Text>Modal Component</Text>
+          <ReviewForm />
         </View>
       </Modal>
 
