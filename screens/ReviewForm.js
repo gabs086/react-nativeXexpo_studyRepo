@@ -1,8 +1,10 @@
 import React from 'react';
-import { StyleSheet, Button, TextInput, View, Text } from 'react-native';
+import { TextInput, View, Text } from 'react-native';
 import { styles } from '../styles/globalStyles.js';
 import { Formik } from 'formik';
 import * as yup from 'yup';
+//Import the Custom button from
+import SubmitButton from '../layouts/Button';
 
 // The validation for each oinput 
 const reviewValidationSchema = yup.object({
@@ -67,7 +69,8 @@ export default function ReviewForm(props) {
             />  
             <Text style={styles.errorText}>{props.touched.rating && props.errors.rating}</Text>
 
-            <Button color='maroon' title="Submit" onPress={props.handleSubmit} /> 
+            <SubmitButton text="Submit" onPress={props.handleSubmit} /> 
+
           </View>
         )}
       </Formik>
