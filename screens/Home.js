@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { View, Text, FlatList, TouchableOpacity, Modal, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  Modal,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 import { styles } from "../styles/globalStyles";
 //Import the card component
 import Card from "../layouts/Card";
@@ -31,6 +40,22 @@ export default function Home(props) {
     },
   ]);
 
+  //Action in adding new data in the reviews
+  const addReview = (review) => {
+    // review parameter are the data passed in the function
+
+    //Generate a new key for the review
+    review.key = Math.random().toString();
+
+    // Get the current data and add new incoming data
+    setReviews((prevState) => {
+      return [review, ...prevState];
+    });
+
+    // close the modal after submition
+    setModal(false);
+  };
+
   // Better way to render components. My Style
   const renderItem = ({ item }) => {
     return (
@@ -48,18 +73,21 @@ export default function Home(props) {
     <View style={styles.container}>
       {/* Modal Component here */}
       <Modal visible={modal} animationType="fade">
-        <View style={styles2.modalContent}>
-          <MaterialIcons
-            name="close"
-            size={24}
-            style={styles2.modalClose}
-            onPress={() => setModal(false)}
-          />
-          <ReviewForm />
-        </View>
+        {/* Dismiss the keyboard if wanted */}
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles2.modalContent}>
+            <MaterialIcons
+              name="close"
+              size={24}
+              style={styles2.modalClose}
+              onPress={() => setModal(false)}
+            />
+            <ReviewForm addReview={addReview} />
+          </View>
+        </TouchableWithoutFeedback>
       </Modal>
 
-    {/* Toggle to open the */}
+      {/* Toggle to open the */}
       <MaterialIcons
         name="add"
         size={24}
@@ -89,7 +117,7 @@ const styles2 = StyleSheet.create({
     marginBottom: 0,
     textAlign: "right",
     marginRight: 10,
-    color: 'red'
+    color: "red",
   },
   modalContent: {
     flex: 1,

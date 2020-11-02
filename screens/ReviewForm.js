@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Button, TextInput, View, Text } from 'react-native';
+import { StyleSheet, Button, TextInput, View, } from 'react-native';
 import { styles } from '../styles/globalStyles.js';
 import { Formik } from 'formik';
 
-export default function ReviewForm() {
+export default function ReviewForm(props) {
 
   return (
     
@@ -15,6 +15,7 @@ export default function ReviewForm() {
         initialValues={{ title: '', body: '', rating: '' }}
         onSubmit={(values) => {
           console.log(values);
+          props.addReview(values)
         }}
       >
         {props => (
